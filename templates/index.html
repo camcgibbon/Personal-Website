@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connor McGibbon | Web Developer</title>
+    <link rel="stylesheet" type="text/css" href="static/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/about">About</a>
+            <a href="/resume">Resume</a>
+            <a href="/projects">Projects</a>
+            <a href="/contact">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+        <section id="intro">
+            <div class="text-section">
+                <h1><span id="greeting">Hi</span> 👋 I'm Connor</h1>
+                <h2>Software Engineer | Full Stack | Web Development</h2>
+                <button id="resume-btn" onclick="window.location.href='/resume'">See My Resume</button>
+                <button id="contact-btn" onclick="window.location.href='/contact'">Contact Me</button>
+                <button id="projects-btn" onclick="window.location.href='/projects'">View Projects</button>
+            </div>            
+            <div class="image-section">
+                <img id="profile-pic" src="static/images/webdev.png">
+            </div>
+        </section>
+
+        <section id="tech-stack">
+            <div class="row hidden">
+            <h2>My Tech Stack</h2>
+            </div>
+            <!-- First row -->
+            <div class="row hidden">
+                <div class="skill">
+                    <img src="static/images/python.png" alt="Python">
+                    <p>Python</p>
+                </div>
+                <div class="skill">
+                    <img src="static/images/c.png" alt="C">
+                    <p>C</p>
+                </div>
+                <div class="skill">
+                    <img src="static/images/cplusplus.png" alt="C++">
+                    <p>C++</p>
+                </div>
+            </div>
+            <!-- Second row -->
+            <div class="row hidden">
+                <div class="skill closer">
+                    <img src="static/images/flask.png" alt="Flask">
+                    <p>Flask</p>
+                </div>
+                <div class="skill closer">
+                    <img src="static/images/r.png" alt="R">
+                    <p>R</p>
+                </div>
+            </div>
+            <!-- Third row -->
+            <div class="row hidden">
+                <div class="skill">
+                    <img src="static/images/javascript.png" alt="Javascript">
+                    <p>Javascript</p>
+                </div>
+                <div class="skill">
+                    <img src="static/images/html.png" alt="HTML">
+                    <p>HTML</p>
+                </div>
+                <div class="skill">
+                    <img src="static/images/css.png" alt="CSS">
+                    <p>CSS</p>
+                </div>
+            </div>
+        </section>                        
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Connor McGibbon</p>
+        <div class="social-links">
+            <a href="https://github.com/camcgibbon" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/connor-mcgibbon/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+            <a href="mailto:camcgibbon02@gmail.com" target="_blank"><i class="fas fa-envelope"></i></a>
+            <a href="https://www.instagram.com/concon_mcg/" target="_blank"><i class="fab fa-instagram"></i></a>
+        </div>
+    </footer>
+    <script src="static/scripts.js"></script>    
+</body>
+</html>
+
