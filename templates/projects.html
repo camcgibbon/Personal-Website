@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects | Connor McGibbon</title>
+    <link rel="stylesheet" type="text/css" href="static/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👨‍💻</text></svg>">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/about">About</a>
+            <a href="/resume">Resume</a>
+            <a href="/projects">Projects</a>
+            <a href="/contact">Contact</a>
+        </nav>
+    </header>
+    <main>
+        <div class="container my-5 fade-in">
+            <div class="row gx-4 gy-4">
+                <!-- Project 1 -->
+                <div class="col-lg-5 col-md-5 project-card">
+                    <div class="project-image-wrapper">
+                        <img class="project-image" src="static/images/mosaic.png" alt="Project Image">
+                    </div>
+                    <div class="project-info">
+                        <h5>Mosaic Generator/Reducer</h5>
+                        <p class="project-description">Utilized a <strong>Microservice</strong> architecture design to implement multiple mosaic generators with a shared middleware. Each generated mosaic is combined and reduced to create a singular mosaic most similar to an original image. Created using <strong>Python</strong>, <strong>Flask</strong>, <strong>JavaScript</strong>, <strong>HTML</strong>, and <strong>CSS</strong></p>
+                        <a href="https://github.com/camcgibbon/Mosaic-Generator" target="_blank"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>                
+    
+                <!-- Project 2 -->
+                <div class="col-lg-5 col-md-5 project-card">
+                    <div class="project-image-wrapper">
+                        <img class="project-image" src="static/images/server.png" alt="Project Image">
+                    </div>
+                    <div class="project-info">
+                        <h5>HTTP Web Server</h5>
+                        <p class="project-description">Coded in <strong>C</strong> and designed to interpret and process HTTP requests received via sockets, ensuring compatibility with popular web browsers such as <strong>Chrome</strong>. It handles incoming connections, parses request headers and content, and sends appropriate responses, providing a robust foundation for web-based applications.</p>
+                        <a href="https://github.com/camcgibbon/HTTP-Web-Server" target="_blank"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>                
+    
+                    <!-- Project 3 -->
+                <div class="col-lg-5 col-md-5 project-card">
+                    <div class="project-image-wrapper">
+                        <img class="project-image" src="static/images/homerate.png" alt="Project Image">
+                    </div>
+                    <div class="project-info">
+                        <h5>HomeRate</h5>
+                        <p class="project-description">Created using <strong>HTML</strong>, <strong>CSS</strong>, <strong>JavaScript</strong>, <strong>Python</strong>, and <strong>Flask</strong>, is a user-friendly web application that integrates <strong>Google Maps API</strong> to provide UIUC students an interactive platform for efficiently locating and evaluating apartments.</p>
+                        <a href="https://github.com/camcgibbon/HomeRate" target="_blank"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>                    
+
+                <!-- Project 4 -->
+                <div class="col-lg-5 col-md-5 project-card">
+                    <div class="project-image-wrapper">
+                        <img class="project-image" src="static/images/malloc.jpeg" alt="Project Image">
+                    </div>
+                    <div class="project-info">
+                        <h5>Custom Memory Allocator</h5>
+                        <p class="project-description">Constructed a dynamic memory allocator and deallocator from scratch utilizing <strong>block splitting</strong>, <strong>memory coalescing</strong>, and <strong>free lists</strong> to optimize functionality. Implemented in <strong>C</strong>, it not only mimics the functionality of 'malloc' but also offers improvements in efficiency for specific tasks.</p>
+                        <a href="https://github.com/camcgibbon/Custom-Memory-Allocator" target="_blank"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>                
+            </div>
+        </div>
+    </main>    
+    <footer>
+        <div class="social-links">
+            <a href="https://github.com/camcgibbon" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/connor-mcgibbon/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+            <a href="mailto:camcgibbon02@gmail.com" target="_blank"><i class="fas fa-envelope"></i></a>
+            <a href="https://www.instagram.com/concon_mcg/" target="_blank"><i class="fab fa-instagram"></i></a>
+        </div>
+        <p>&copy; 2023 Connor McGibbon</p>
+    </footer>
+    <script src="static/resume_scripts.js"></script>
+</body>
+</html>

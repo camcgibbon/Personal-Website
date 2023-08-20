@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Connor McGibbon</title>
+    <link rel="stylesheet" type="text/css" href="static/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👨‍💻</text></svg>">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/about">About</a>
+            <a href="/resume">Resume</a>
+            <a href="/projects">Projects</a>
+            <a href="/contact">Contact</a>
+        </nav>
+    </header>
+    <main>
+        <div class="contact-text fade-in">
+            <h1>Reach Out to me!</h1>
+            <h2>I'd love to hear from you. Feel free to send a message below and I'll get back to you as soon as I can.</h2>
+        </div>
+        <section id="contact-form2" class="fade-in">
+            <div class="alert alert-success text-center" id="flashMessage" style="display: none;"></div>
+            <style>
+                @import url('https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css');
+            </style>
+            <div class=contact-form3 id="contact-form-row">
+                <form method="post" action="/contactme" class="text-center">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="name" class="text-white">Name:</label>
+                                <input type="text" id="name" name="name" class="form-control" required>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="email" class="text-white">Email:</label>
+                                <input type="email" id="email" name="email" class="form-control" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="message" class="text-white">Message:</label>
+                        <textarea id="message" name="message" rows="5" class="form-control" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+            {% with messages = get_flashed_messages() %}
+              {% if messages %}
+                <div class="alert alert-success text-center" id="flashMessage">{{ messages[0] }}</div>
+                <script>
+                  document.getElementById("contact-form-row").style.display = "none";
+                </script>
+              {% endif %}
+            {% endwith %}
+        </section>
+        <div class="contact-links fade-in">
+            <div class="contact-item">
+                <a href="https://www.google.com/maps/place/Champaign,+IL" target="_blank">
+                    <i class="fas fa-map-marker-alt"></i> Champaign, IL
+                </a>
+            </div>
+            <div class="contact-item">
+                <a href="mailto:camcgibbon02@gmail.com">
+                    <i class="fas fa-envelope"></i> camcgibbon02@gmail.com
+                </a>
+            </div>
+            <div class="contact-item">
+                <a href="https://www.linkedin.com/in/connor-mcgibbon" target="_blank">
+                    <i class="fab fa-linkedin"></i> LinkedIn Profile
+                </a>
+            </div>
+        </div>      
+    </main>
+    <footer>
+        <div class="social-links">
+            <a href="https://github.com/camcgibbon" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/connor-mcgibbon/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+            <a href="mailto:camcgibbon02@gmail.com" target="_blank"><i class="fas fa-envelope"></i></a>
+            <a href="https://www.instagram.com/concon_mcg/" target="_blank"><i class="fab fa-instagram"></i></a>
+        </div>
+        <p>&copy; 2023 Connor McGibbon</p>
+    </footer>
+    <script src="static/contact_scripts.js"></script> 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+    $(document).ready(function(){
+        $("form").on('submit', function(event){
+        event.preventDefault();
+        
+        $.ajax({
+            data : {
+            name : $('#name').val(),
+            email : $('#email').val(),
+            message : $('#message').val()
+            },
+            type : 'POST',
+            url : '/contactme'
+        })
+        .done(function(response){
+            $("#contact-form-row").hide();
+            $("#flashMessage").show().text(response);
+        });
+        });
+    });
+    </script>
+</body>
+</html>

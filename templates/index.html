@@ -6,6 +6,7 @@
     <title>Connor McGibbon | Web Developer</title>
     <link rel="stylesheet" type="text/css" href="static/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👨‍💻</text></svg>">
 </head>
 <body>
     <header>
@@ -19,7 +20,7 @@
     </header>
 
     <main>
-        <section id="intro">
+        <section id="intro" class="fade-in">
             <div class="text-section">
                 <h1><span id="greeting">Hi</span> 👋 I'm Connor</h1>
                 <h2>Software Engineer | Full Stack | Web Development</h2>
@@ -27,7 +28,7 @@
                 <button id="contact-btn" onclick="window.location.href='/contact'">Contact Me</button>
                 <button id="projects-btn" onclick="window.location.href='/projects'">View Projects</button>
             </div>            
-            <div class="image-section">
+            <div class="image-section1">
                 <img id="profile-pic" src="static/images/webdev.png">
             </div>
         </section>
@@ -43,23 +44,23 @@
                     <p>Python</p>
                 </div>
                 <div class="skill">
-                    <img src="static/images/c.png" alt="C">
-                    <p>C</p>
+                    <img src="static/images/flask.png" alt="Flask">
+                    <p>Flask</p>
                 </div>
                 <div class="skill">
-                    <img src="static/images/cplusplus.png" alt="C++">
-                    <p>C++</p>
+                    <img src="static/images/pandas.png" alt="Pandas">
+                    <p>Pandas</p>
                 </div>
             </div>
             <!-- Second row -->
             <div class="row hidden">
                 <div class="skill closer">
-                    <img src="static/images/flask.png" alt="Flask">
-                    <p>Flask</p>
+                    <img src="static/images/c.png" alt="C">
+                    <p>C</p>
                 </div>
                 <div class="skill closer">
-                    <img src="static/images/r.png" alt="R">
-                    <p>R</p>
+                    <img src="static/images/cplusplus.png" alt="C++">
+                    <p>C++</p>
                 </div>
             </div>
             <!-- Third row -->
@@ -77,19 +78,95 @@
                     <p>CSS</p>
                 </div>
             </div>
-        </section>                        
+            <div class="row hidden">
+                <div class="skill closer">
+                    <img src="static/images/docker.png" alt="Docker">
+                    <p>Docker</p>
+                </div>
+                <div class="skill closer">
+                    <img src="static/images/r.png" alt="R">
+                    <p>R</p>
+                </div>
+            </div>
+            <section id="contact-form">
+                <div class="row hidden">
+                    <h2 class="text-white">Interested in working together? Let's get in touch</h2>
+                </div>
+                <div class="alert alert-success text-center" id="flashMessage" style="display: none;"></div>
+                <style>
+                    @import url('https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css');
+                </style>
+                <div class="row hidden" id="contact-form-row">
+                    <form method="post" action="/contactme" class="text-center">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="name" class="text-white">Name:</label>
+                                    <input type="text" id="name" name="name" class="form-control" required>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="email" class="text-white">Email:</label>
+                                    <input type="email" id="email" name="email" class="form-control" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="message" class="text-white">Message:</label>
+                            <textarea id="message" name="message" rows="5" class="form-control" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                </div>
+                {% with messages = get_flashed_messages() %}
+                  {% if messages %}
+                    <div class="alert alert-success text-center" id="flashMessage">{{ messages[0] }}</div>
+                    <script>
+                      document.getElementById("contact-form-row").style.display = "none";
+                    </script>
+                  {% endif %}
+                {% endwith %}
+            </section>
+            <section id="madeby">
+                <div class="row hidden">
+                    <h2>This Website Was Developed Using <span id="tech">HTML</span></h2>
+                </div>
+            </section>                                                                                           
     </main>
 
     <footer>
-        <p>&copy; 2023 Connor McGibbon</p>
         <div class="social-links">
             <a href="https://github.com/camcgibbon" target="_blank"><i class="fab fa-github"></i></a>
             <a href="https://www.linkedin.com/in/connor-mcgibbon/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
             <a href="mailto:camcgibbon02@gmail.com" target="_blank"><i class="fas fa-envelope"></i></a>
             <a href="https://www.instagram.com/concon_mcg/" target="_blank"><i class="fab fa-instagram"></i></a>
         </div>
+        <p>&copy; 2023 Connor McGibbon</p>
     </footer>
-    <script src="static/scripts.js"></script>    
+    <script src="static/scripts.js"></script> 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+    $(document).ready(function(){
+        $("form").on('submit', function(event){
+        event.preventDefault();
+        
+        $.ajax({
+            data : {
+            name : $('#name').val(),
+            email : $('#email').val(),
+            message : $('#message').val()
+            },
+            type : 'POST',
+            url : '/contactme'
+        })
+        .done(function(response){
+            $("#contact-form-row").hide();
+            $("#flashMessage").show().text(response);
+        });
+        });
+    });
+    </script>           
 </body>
 </html>
 

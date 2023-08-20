@@ -1,7 +1,7 @@
-body {
+html, body {
     font-family: 'Arial', sans-serif;
     margin: 0;
-    padding: 0 0 70px;
+    padding: 0;
     color: #fff;
     background: linear-gradient(132deg, #1b1b2f, #000);
     background-size: 400% 400%;
@@ -43,11 +43,18 @@ header {
     background: #000;
     color: #fff;
     padding: 10px 0;
-    position: sticky;
+    position: fixed;
     top: 0;
     z-index: 100;
+    transition: top 0.5s ease;
+    width: 100%;
 }
 
+header nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 header nav a {
     color: #fff;
@@ -58,6 +65,7 @@ header nav a {
 
 header nav a:hover {
     color: #4b4dff;
+    text-decoration: none;
 }
 
 #intro {
@@ -72,6 +80,16 @@ header nav a:hover {
 .text-section {
     max-width: 60%;
     text-align: center;
+}
+
+.image-section1 {
+    max-width: 40%;
+    text-align: right;
+}
+
+.image-section1 img {
+    width: 100%;
+    height: auto;
 }
 
 .image-section {
@@ -172,15 +190,57 @@ header nav a:hover {
     font-weight: bold;
 }
 
+#contact-form {
+    padding: 20px;
+    text-align: center;
+    margin-top: 200px;
+}
+
+#contact-form h2 {
+    color: #fff;
+}
+
+
+#contact-form label {
+    color: #fff;
+}
+
+#contact-form input, #contact-form textarea {
+    border: none;
+    background: #333;
+    color: #fff;
+}
+
+#contact-form .btn {
+    background: #4b4dff;
+    color: #fff;
+    border: none;
+}
+
+#contact-form .btn:hover {
+    background: #3a3fff;
+    color: #fff;
+}
+
+#madeby {
+    text-align: center;
+    padding: 20px;
+    margin-top: 200px;
+    font-size: 0.5em;
+}
+
+#tech {
+    color: #4b4dff;
+}
 
 footer {
     background: #000;
     color: #fff;
     text-align: center;
-    padding: 20px 0;
-    position: fixed;
+    padding: 5px 0;
     bottom: 0;
     width: 100%;
+    transition: bottom 0.5s ease;
 }
 
 footer .social-links {
@@ -208,5 +268,433 @@ footer .social-links a:hover {
 .reveal {
     opacity: 1;
     transform: translateY(0px);
+}
+
+.about-me {
+    width: 70%;
+    line-height: 1.6;
+    padding: 20px 0;
+    margin: auto;
+}
+
+.about-me h3 {
+    color: #4b4dff;
+}
+
+.interest-row {
+    margin-top: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.interest-image {
+    flex-basis: 40%;
+    text-align: center;
+    margin: auto;
+}
+
+.interest-image img {
+    max-width: 100%;
+    height: auto;
+    margin: auto;
+}
+
+.interest-text {
+    flex-basis: 55%;
+    text-align: center;
+    max-width: 50%;
+    margin: auto;
+    font-size: 1.1em;
+}
+
+.smaller-image {
+    max-width: 75% !important;
+}
+
+#spotify-section {
+    background-color: #191414;
+    border-radius: 10px;
+    color: white;
+    padding: 20px;
+    margin-top: 20px;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 35px;
+}
+
+#spotify-section h2 {
+    display: flex;
+    align-items: center;
+    font-size: 1.2em;
+    justify-content: center;
+    text-align: center;
+}
+
+#spotify-logo {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+}
+
+#spotify-top-tracks {
+    list-style-type: none;
+    padding: 0;
+    text-align: left;
+}
+
+#spotify-top-tracks li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.album-image {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+}
+
+.song-title {
+    margin: 0;
+    padding: 0;
+    color: #fff;
+}
+
+.artist-name {
+    margin: 0;
+    padding: 0;
+    font-size: 0.9em;
+    color: #999;
+}
+
+.api-note {
+    font-size: 0.8em;
+    color: #999;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.image-section img, .interest-image img {
+    border: 3px solid #fff;
+    border-radius: 15px;
+    transition: border-color 0.3s ease-in-out;
+}
+
+.image-section img:hover, .interest-image img:hover {
+    border-color: #8586be;
+}
+
+.resume-top {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: auto;
+    color: #fff;
+    margin-top: 300px;
+    margin-bottom: 250px;    
+}
+
+.resume-top a,
+.resume-top button {
+    display: inline-block;
+}
+
+.resume-top button {
+    padding: 10px 20px;
+    margin: 10px 2px;
+    border: 1px solid #4b4dff;
+    background: transparent;
+    color: #fff;
+    font-size: 1.1em;
+    transition: background .3s, color .3s;
+    cursor: pointer;
+}
+
+.resume-top button:hover {
+    background: #4b4dff;
+    color: #fff;
+}
+
+.qualifications {
+    background-color: #aeaee0ea;
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 50px;
+}
+
+.qualification-section h3 {
+    color: white;
+    text-align: center;
+    font-family: "Didot", serif;
+}
+
+.qualification-section p {
+    color: #343a40;
+}
+
+h1.text-center.my-5 {
+    color: #fff;
+}
+
+.qualification-section a {
+    color: #4a5056;
+    text-decoration: none;
+    border-bottom: 1px dotted #4a5056;
+    font-size: 0.8em;
+}
+
+.qualification-section a:hover {
+    color: #4b4dff;
+    border-bottom: none;
+    text-decoration: none;
+}
+
+.qualification-section p {
+    font-family: "Courier New", monospace;
+}
+
+.qualification-section ul{
+    font-family: "Courier New", monospace;
+    font-size: 0.8em;
+}
+
+.date-text {
+    font-size: 0.8em;
+    color: #4a5056;
+}
+
+.qualification-section p .leantaas {
+    color: #343a40 !important;
+    font-size: 1em !important;
+    border-bottom: none !important;
+}
+
+.qualification-section p .leantaas:hover {
+    color: #4b4dff !important;
+}
+
+.place-date {
+    font-size: 0.8em;
+    color: #4a5056;
+}
+
+.description {
+    font-size: 0.7em;
+    font-family: 'Palatino', serif;
+}
+
+.resume-skill {
+    display: none;
+}
+
+.resume-skill.active {
+    display: block;
+}
+
+.resume-skill .skill-label {
+    margin-bottom: 0.5em;
+}
+
+.resume-skill .progress {
+    margin-bottom: 1.5em;
+}
+
+.data-engineering .progress-bar {
+    background-color: #6db4ff;
+}
+
+.web-development .progress-bar {
+    background-color: #82d796;
+}
+
+.tools .progress-bar {
+    background-color: #fdff9c;
+}
+
+.languages .progress-bar {
+    background-color: #fc96a0;
+}
+
+.frameworks .progress-bar {
+    background-color: #df90d8;
+}
+
+.btn-group {
+    margin-bottom: 20px;
+}
+
+.btn-group .btn-primary {
+    background-color: transparent;
+    color: #ffffff;
+    border: none;
+}
+
+.btn-group .btn-primary.active {
+    background-color: transparent !important;
+    color: #4b4dff !important;
+    border: 1px solid #4b4dff !important;
+}
+
+.btn-group .btn-primary:hover {
+    background-color: transparent !important;
+    color: #4b4dff !important;
+    border: 1px solid #4b4dff !important;
+}
+
+.btn-group .btn-primary:focus {
+    box-shadow: none !important;
+    outline: none !important;
+}
+
+.project-card {
+    margin: 25px;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+    transition: background-color 0.5s ease;
+}
+
+.project-image-wrapper { 
+    height: 300px;
+    overflow: hidden;
+}
+
+.project-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.project-card:hover .project-image {
+    transform: scale(1.1);
+}
+
+.project-card:hover {
+    background-color: #aeaee0ea;
+}
+
+.contact-text {
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    margin-top: 150px;
+    color: #fff;
+}
+
+.contact-text h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.contact-text h2 {
+    font-size: 1.2em;
+    color: #4b4dff;
+}
+
+#contact-form2 {
+    padding: 20px;
+    text-align: center;
+}
+
+#contact-form2 h2 {
+    color: #fff;
+}
+
+
+#contact-form2 label {
+    color: #fff;
+}
+
+#contact-form2 input, #contact-form2 textarea {
+    border: none;
+    background: #333;
+    color: #fff;
+}
+
+#contact-form2 .btn {
+    background: #4b4dff;
+    color: #fff;
+    border: none;
+}
+
+#contact-form2 .btn:hover {
+    background: #3a3fff;
+    color: #fff;
+}
+
+.fade-in {
+    animation: fadeIn ease 2s;
+    -webkit-animation: fadeIn ease 2s;
+    -moz-animation: fadeIn ease 2s;
+    -o-animation: fadeIn ease 2s;
+    -ms-animation: fadeIn ease 2s;
+}
+
+@keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+}
+
+@-moz-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+}
+
+@-webkit-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+}
+
+@-o-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+}
+
+@-ms-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+}
+
+.contact-form3 {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.contact-links {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 200px;
+    margin-top: 100px;
+    color: white;
+}
+
+.contact-item {
+    flex: 1;
+    text-align: center;
+}
+
+.contact-item a {
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5em; /* adjust as needed */
+    transition: color 0.3s ease;
+}
+
+.contact-item i {
+    margin-right: 10px;
+}
+
+.contact-item a:hover {
+    color: #4b4dff;
+    text-decoration: none;
 }
 

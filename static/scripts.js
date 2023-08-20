@@ -15,7 +15,7 @@ function reveal(){
   }
 }
 
-let greetings = ["Hi", "Hola", "Olá", "Bonjour", "Salut", "Ciao"];
+let greetings = ["Hi", "Hola", "Olá", "Bonjour", "Howdy🤠", "Salut", "Ciao", "안녕", "Čau", "Hoi", "Привет", "Hello", "你好", "Bok", "Hallo", "Selam", "今日は", "أهلاً"];
 let count = 0;
 let index = 0;
 let currentText = "";
@@ -41,4 +41,42 @@ let letter = "";
     }
 }());
 
+let tech = ["HTML", "JavaScript", "MySQL", "Python", "Flask", "Bootstrap", "JQuery", "SQLAlchemy"];
+let count2 = 0;
+let index2 = 0;
+let currentText2 = "";
+let letter2 = "";
 
+(function type(){
+
+    if(count2 === tech.length){
+        count2 = 0;
+    }
+    currentText2 = tech[count2];
+    letter2 = currentText2.slice(0, ++index2);
+
+    document.querySelector("#tech").innerHTML = letter2 + "<span id='cursor'></span>";
+    if(letter2.length === currentText2.length){
+        setTimeout(function(){
+            count2++;
+            index2 = 0;
+            setTimeout(type, 500);
+        }, 3000);
+    } else {
+        setTimeout(type, 100);
+    }
+}());
+
+
+let lastScrollTop = 0;
+window.addEventListener("scroll", function() {
+    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    if (scrollTop > lastScrollTop){
+        // Downscroll, hide header
+        document.querySelector("header").style.top = "-50px";
+    } else {
+       // Upscroll, show header
+       document.querySelector("header").style.top = "0";
+    }
+    lastScrollTop = scrollTop;
+});
